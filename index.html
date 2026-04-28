@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaqueline Zanandrea Rocha Dias — Portfólio Pessoal</title>
+
+  <meta name="description" content="Portfólio pessoal de Jaqueline Zanandrea Rocha Dias, Técnica e Tecnóloga em Radiologia, Graduanda em Ciência de Dados, com formação diversa e experiência na área da saúde." />
+  <!-- CSS JUNTO -->
+     <style>
+    :root { /*-- PADRONIZANDO VARIÁVEIS GLOBAIS--*/
+      --bg: #0e1424;
+      --fg: #e9e9f0;
+      --card: rgba(67, 67, 71, 0.95); 
+      --border: #2a3450;
+      --accent: rgba(67,67,71, 0.95); /*COR DESTAQUE */
+      --muted: #a5a5a5; /*COR SUAVE */
+    }
+    html { scroll-behavior: smooth; } /* SUAVIZA A ROLAGEM */
+    *, *::before, *::after { box-sizing: border-box; } /*ANTE E DEPOIS */
+
+    body {
+      margin: 0; /* REMOVE MARGEN PADRÃO */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--fg); /* COR TEXTO PADRÃO */
+      background: linear-gradient(135deg, #0b1020 0%, #151a2b 60%, #0b1020 100%); /*FUNDO GRADIENTE ESCURO */
+    }
+    /*---- CABEÇALHO ----*/
+    header {
+      position: sticky; /* POSICIONAMENTO FIXO */
+      top: 0;
+      z-index: 1000; /* CONTROLA CAMADA DE EXIBIÇÃO */
+      background: rgba(10,12,22,0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav {          /* ---- MENU DE NAVEGAÇÃO ---- */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 12px 20px;
+    }
+    .brand {
+      color: #fff;
+      text-decoration: none; /* LIMPEZA */
+      font-weight: 700;
+      font-size: 1.05rem;
+      
+    }
+    .nav ul {
+      list-style: none; /*REMOVE MARCAÇÃO */
+      display: flex; /* ALINHA HORIZONTAL */
+      gap: 16px; /* ESPAÇO ENTRE ITENS */
+      margin: 0;
+      padding: 0;
+    }
+    .nav a {
+      color: #e8e8e8;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px; /* ARREDONDAMENTO */
+    }
+    .nav a.active, .nav a:hover {
+      background: rgba(107,209,255,0.15);
+    }
+    main {
+      max-width: 1000px; /* LARGURA */
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+    .section { padding: 60px 0; }
+    .section-title {
+      display: flex;
+      align-items: center; /* ALINHA VERTICAL */
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-title .dot {
+      width: 10px; height: 10px; 
+      background: var(--accent);
+      border-radius: 50%; 
+      display: inline-block;
+    }
+    .section h2 { font-size: 2rem; margin: 0; }
+
+    .section p { color: var(--muted); }
+
+    .grid { display: grid; gap: 20px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
+    @media (max-width: 900px) { /* TELA MENOR */
+    .grid-2 { grid-template-columns: 1fr; } 
+    }
+    
+    /*---- GRID PORTFÓLIO (2x2) ---- */
+    .portfolio-list {
+      margin: 0 px;
+      display: grid--2;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+}
+
+    @media (max-width: 900px) {
+    .portfolio-list { grid-template-columns: 1fr; }
+  }
+    .portfolio-item {
+    margin: 16px;  
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px
+  }
+    .portfolio-item h4 { margin: 0 0  16px;}
+    .portfolio-item p { margin: 0 0 16px 0; color: var(--muted); flex-grow: 1; font-weight: 600; }
+    .portfolio-item a { color: #3d55d8; text-decoration: none; font-weight: 600 }
+
+    #contato .grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) {
+    #contato .grid { grid-template-columns: 1fr; }
+    }
+    .input, .textarea {
+      width: 100%; padding: 14px; border-radius:12px;
+      border: 2px solid #334; background: rgba(67,67,71, 0.95); color: #fff;
+    }
+    .label { display: block; margin-bottom: 6px; font-size: 14px; color: #cbd5e1; }
+    .error { color: #df3a3a; font-size: 12px; min-height: 14px; }
+    .success { color: #6bdc88; font-size: 14px; }
+    
+    .form-group {
+      margin-bottom: 16px;
+     
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: left; 
+      border-radius: 12px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- CABEÇALHO COM NAVEGAÇÃO POR ÂNCORAS -->
+  <header>
+    <nav class="nav" aria-label="Navegação principal">
+    <a href="#" class="brand" aria-label="Nome do Portfólio">Jaqueline Zanandrea Rocha Dias</a>
+      <ul id="menu">
+        <li><a class="nav-link active" href="#sobre" aria-label="Seção Sobre mim">Sobre mim</a></li>
+        <li><a class="nav-link" href="#formacao" aria-label="Seção Formação">Formação</a></li>
+        <li><a class="nav-link" href="#portfolio" aria-label="Seção Portfólio">Portfólio</a></li>
+        <li><a class="nav-link" href="#contato" aria-label="Seção Contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="section" aria-label="Sobre mim">
+      <div class="section-title">
+        <span class="dot" aria-hidden="true"></span>
+        <h2>Sobre mim</h2>
+      </div>
+
+      <div class="grid grid-2" style="grid-template-columns: 1.1fr 0.9fr;">
+        <div class="card" aria-label="Apresentação pessoal">
+          <p>Olá! Sou Jaqueline Zanandrea Rocha Dias, Técnica e Tecnóloga em Radiologia, e estou como Graduanda em Ciência de Dados.</p>
+          <p>Atuo há mais de 15 anos na área da saúde, com foco em Radiologia. Atualmente combino o conhecimento técnico com gestão de inteligência e informação em saúde. Estou em constante atualização acadêmica, com especializações em métodos de imagem avançados e em breve expansão para a Ciência de Dados, visando inovação tecnológica no diagnóstico e na gestão em saúde.</p>
+          <ul style="margin:0; padding-left:16px;">
+            <li>Habilidades: processamento e análise de dados de saúde pública, docência e gestão de informações em saúde.</li>
+            <li>Objetivo: contribuir para soluções de dados na saúde, mantendo foco em qualidade, ética e acessibilidade.</li>
+          </ul>
+        </div>
+
+        <div class="card" aria-label="Resumo profissional">
+          <h3>Resumo</h3>
+          <ul style="margin:0; padding-left:16px;">
+            <li>Experiência em Radiologia e Educação</li>
+            <li>Interesse em Ciência de Dados aplicada à saúde</li>
+            <li>Gestão de informações em saúde e melhoria de processos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- FORMAÇÃO -->
+    <section id="formacao" class="section" aria-label="Formação">
+      <div class="section-title">
+        <span class="dot" aria-hidden="true"></span>
+        <h2>Formação</h2>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card" aria-label="Formação educacional">
+          <h3>Educação</h3>
+          <ul style="margin:0; padding-left:16px;">
+            <li>Graduação em Tecnologia e Ciência de Dados - Uninter (Previsão 2027).</li>
+            <li>Tecnóloga em Radiologia - Uniasselvi (2022).</li>
+            <li>Bacharelado em Teologia Interconfissional - Uninter (2022).</li>
+            <li>Licenciatura Plena em Ciências Biológicas - Uniasselvi (2015).</li>
+            <li>Técnica em Radiologia Médica - Ipuc RS (2006).</li>
+          </ul>
+        </div>
+         <!-- ESPECIALIZAÇÕES -->
+        <div class="card" aria-label="Cursos e Especializações">
+          <h3>Especializações</h3>
+          <ul style="margin:0; padding-left:16px;">
+            <li>Tomografia Computadorizada (CT) - FACSM (2025).</li>
+            <li>Mamografia - FACSM (2026).</li>
+            <li>Ressonância Magnética - FACSM (2026).</li>
+            <li>Imagenologia - Uninter (2025).</li>
+            <li>Teologia e Práticas Pastorais - Uninter (2025).</li>
+            <li>Metodologia do Ensino de Ciências Biológicas - Uniasselvi (2017).</li>
+          </ul>
+        </div>
+         <!-- CURSOS E INFORMAÇÕES ADICIONAIS -->
+        <div class="card" aria-label="Cursos e Informaçoes adicionais">
+          <h3>Cursos e Informações adicionais</h3>
+          <ul style="margin:0; padding-left:16px;">
+            <li>Proteção Radiológica: Atualização Normativa - IFSC.</li>
+            <li>Inovação na Educação e nas Organizações - Uninter.</li>
+            <li>Seminário Multidisciplinar em Humanidades - Unesc.</li>
+            <li>Serviço Voluntariado: Professora na EBD - IOBPC.</li>
+           
+          </ul>
+        </div>
+
+        <div class="card" aria-label="Idiomas">
+          <h3>Idiomas</h3>
+          <ul style="margin:0; padding-left:16px;">
+            <li>Português - Nativo</li>
+            <li>Inglês - Básico</li>
+            <li>Hebraico - Iniciante</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- PORTIFÓLIO -->
+    <section id="portfolio" class="section" aria-label="Portfólio">
+      <div class="section-title">
+        <span class="dot" aria-hidden="true"></span>
+        <h2>Portfólio</h2>
+      </div>
+
+      <div class="portfolio-list" aria-label="Projetos realizados">
+        <article class="portfolio-item">
+          <h4>Projeto Gestão de exames oftalmológicos<h4>
+            <p>Desenvolvido em JAVA com utilitários para manipulação e auditoria de exames.</p>
+          <a href="https://github.com/Jazarodi/ProjetoOftalmologia.git" target="_blank" rel="noreferrer">Projeto Oftalmologia</a>
+        </article>
+
+        <article class="portfolio-item">
+          <h4>Projeto Controle financeiro</h4>
+          <p>Desenvolvido em JAVA com ferramentas para conversão e movimentação de valores.</p>
+          <a href="https://github.com/Jazarodi/ProjetoPratica.git" target="_blank" rel="noreferrer">Projeto Cofrinho</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTATO COM VALIDAÇÃO E ENVIO-->
+    <section id="contato" class="section" aria-label="Contato">
+      <div class="section-title">
+        <span class="dot" aria-hidden="true"></span>
+        <h2>Contato</h2>
+      </div>
+
+      <form id="formContato" novalidate>
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="form-group">
+            <label class="label" for="nome">Nome</label>
+            <input class="input" type="text" id="nome" name="nome" placeholder="Seu nome" required aria-required="true" />
+            <div class="error" id="erroNome" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="label" for="email">Email</label>
+            <input class="input" type="email" id="email" name="email" placeholder="seu@email.com" required aria-required="true" />
+            <div class="error" id="erroEmail" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:12px;">
+          <label class="label" for="mensagem">Mensagem</label>
+          <textarea class="textarea" id="mensagem" name="mensagem" rows="3" placeholder="Escreva sua mensagem..." required aria-required="true"></textarea>
+          <div class="error" id="erroMensagem" aria-live="polite"></div>
+        </div>
+
+        <div class="btn-container">
+          <button type="submit" class="input" style="width: 150px; max-width:100%; padding:12px; border-radius:8px; border:none; cursor:pointer; background:#2e7bd9; color:white;">
+            Enviar mensagem 
+          </button>
+          <span id="statusEnvio" class="success" style="margin-top:8px;"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
+<!-- SCRIPT NAVEGAÇÃO POR SEÇÃO E VALIDAÇÃO DE FORMULÁRIO -->
+  <script>
+    // MENU DE SEÇÃO VISÍVEL (INTERSECTIONOBSERVER)
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = [ //DECLARANDO CONSTANTE DE SEÇÃO  
+        { id: 'sobre' },
+        { id: 'formacao' },
+        { id: 'portfolio' },
+        { id: 'contato' }
+      ];
+      const anchors = sections.map(s => document.querySelector(`a[href="#${s.id}"]`)).filter(Boolean);
+
+      const setActive = (id) => {
+        anchors.forEach(a => {
+          if (a.getAttribute('href') === `#${id}`) a.classList.add('active');
+          else a.classList.remove('active');
+        });
+      };
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            setActive(e.target.id);
+          }
+        });
+      }, {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: 0.01
+      });
+
+      sections.forEach(s => {
+        const el = document.getElementById(s.id);
+        if (el) obs.observe(el);
+      });
+    });
+    // VALIDAÇÃO E ENVIO FORMULARIO 
+    (function() {
+      const form = document.getElementById('formContato');
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const mensagem = document.getElementById('mensagem');
+
+      const erroNome = document.getElementById('erroNome');
+      const erroEmail = document.getElementById('erroEmail');
+      const erroMensagem = document.getElementById('erroMensagem');
+      const statusEnvio = document.getElementById('statusEnvio');
+
+      function validarEmail(valor) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(valor);
+      }
+        form.addEventListener('submit', function(e) {
+        e.preventDefault(); // NÃO PERMITE O ENVIO 
+        // LIMPANDO LISTAS
+        erroNome.textContent = '';
+        erroEmail.textContent = '';
+        erroMensagem.textContent = '';
+        statusEnvio.textContent = '';
+
+        let valido = true;
+
+        if (!nome.value.trim()) {
+          erroNome.textContent = 'Por favor, informe seu nome.';
+          valido = false;
+        }
+
+        if (!email.value.trim() || !validarEmail(email.value.trim())) {
+          erroEmail.textContent = 'Informe um email válido.';
+          valido = false;
+        }
+
+        if (!mensagem.value.trim() || mensagem.value.trim().length < 15) {
+          erroMensagem.textContent = 'A mensagem deve ter pelo menos 10 caracteres.';
+          valido = false;
+        }
+
+        if (!valido) return;
+
+        // SIMULAÇÃO
+        statusEnvio.textContent = 'Enviando...';
+        form.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
+
+        setTimeout(function() {
+          statusEnvio.textContent = 'Mensagem Enviada!';
+          form.reset();
+          form.querySelectorAll('input, textarea').forEach(el => el.disabled = false);
+          setTimeout(() => { statusEnvio.textContent = ''; }, 4000);
+        }, 1200);
+      });
+    })();
+     </script>
+     </body>
+</html>
